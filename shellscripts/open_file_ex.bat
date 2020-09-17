@@ -1,0 +1,1 @@
+explorer.exe /select,"%1"

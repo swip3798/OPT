@@ -1,0 +1,16 @@
+id,en,de
+browse,Browse,Durchsuchen
+merge,Merge,Zusammenführen
+merge_tab_resize,Merge,Zusammenführen
+add_pdf_file,Add PDF file,PDF Datei hinzufügen
+crop,Crop,Zuschneiden
+merge_long,Merge multiple PDF file to one pdf file,Füge mehrere PDF Dateien zu einer PDF Datei zusammen
+delete,Delete,Löschen
+remove,Remove,Entfernen
+alert,Alert!,Achtung!
+alert_merge_no_files,No files are selected for merging!,Keine Dateien wurden zur Zusammenführung ausgewählt!
+alert_merge_one_file,Only one file is selected for merging. Two files need to be selected!,Es wurde nur eine Datei für eine Zusammenführung ausgewählt. Bitte wählen Sie eine zweite Datei aus.
+cut,Cut,Trennen
+cut_tab_resize,Cut,Trennen
+cut_at_position,Cut PDF file at position,An gewählter Position PDF Dokument aufteilen
+cut_description,Choose a PDF file and cut it in two seperate PDF files.,Wähle ein PDF Dokument und zerteile in zwei neue PDF Dateien.
