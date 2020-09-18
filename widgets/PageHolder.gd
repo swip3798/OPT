@@ -11,7 +11,7 @@ func _ready():
 
 func load_texture():
 	$VBoxContainer/TextureRect.texture = PdfBackend.get_thumbnail(page_number)
-	$VBoxContainer/Label.text = str(page_number)
+	$VBoxContainer/Label.text = tr("page") + " " + str(page_number + 1)
 	
 func make_last():
 	last = true

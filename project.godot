@@ -24,10 +24,6 @@ config/icon="res://icon.png"
 Utility="*res://singletons/Utility.gd"
 PdfBackend="*res://singletons/PDFBackend.gd"
 
-[debug]
-
-settings/fps/force_fps=30
-
 [locale]
 
 translations=PoolStringArray( "res://translation/translation.de.translation", "res://translation/translation.en.translation" )

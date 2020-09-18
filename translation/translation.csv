@@ -14,3 +14,5 @@ cut,Cut,Trennen
 cut_tab_resize,Cut,Trennen
 cut_at_position,Cut PDF file at position,An gewählter Position PDF Dokument aufteilen
 cut_description,Choose a PDF file and cut it in two seperate PDF files.,Wähle ein PDF Dokument und zerteile in zwei neue PDF Dateien.
+choose_pdf_file,Choose a PDF file,Wähle ein PDF Dokument
+page,Page,Seite

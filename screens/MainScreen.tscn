@@ -21,13 +21,13 @@ __meta__ = {
 }
 
 [node name="merge_tab_resize" parent="TabContainer" instance=ExtResource( 1 )]
+visible = false
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="cut_tab_resize" parent="TabContainer" instance=ExtResource( 2 )]
-visible = false
 margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
