@@ -22,3 +22,5 @@ back,Back,Zurück
 language:,Language:,Sprache:
 english,English,Englisch
 german,German,Deutsch
+license,License,Lizenz
+license_desc,Open-PDF-Toolkit is Open-Source and released under the GPLv3 license. It was build using the Godot engine and MuPDF. The license texts of all used third-party software can be found below.,Open-PDF-Toolkit ist Open-Source und wurde unter der GPLv3 Lizenz veröffentlicht. Zur Entwicklung wurde die Godot Engine und die MuPDF Bibliothek eingesetzt. Die Lizenztexte der genutzten Software können hier aufgerufen werden.

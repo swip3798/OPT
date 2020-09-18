@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 func _ready():
-	if TranslationServer.get_language() == "de":
+	if Settings.get_language() == "de":
 		$HBoxContainer/OptionButton.select(1)
 	else:
 		$HBoxContainer/OptionButton.select(0)

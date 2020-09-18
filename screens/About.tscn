@@ -23,6 +23,7 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
 margin_bottom = 593.0
+custom_constants/separation = 4
 
 [node name="Back" type="Button" parent="PanelContainer/VBoxContainer"]
 margin_right = 41.0
@@ -61,5 +62,46 @@ size_flags_horizontal = 3
 text = "english"
 items = [ "english", null, false, 0, null, "german", null, false, 1, null ]
 selected = 0
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 1010.0
+margin_bottom = 75.0
+custom_constants/separation = 9
+
+[node name="License" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 79.0
+margin_right = 1010.0
+margin_bottom = 586.0
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer/License"]
+margin_right = 1010.0
+margin_bottom = 14.0
+text = "license"
+align = 1
+
+[node name="Description" type="Label" parent="PanelContainer/VBoxContainer/License"]
+margin_top = 18.0
+margin_right = 1010.0
+margin_bottom = 32.0
+text = "license_desc"
+autowrap = true
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/License"]
+margin_top = 36.0
+margin_right = 1010.0
+margin_bottom = 507.0
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/License/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/Settings/HBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/Settings" method="_on_OptionButton_item_selected"]
