@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://screens/Settings.gd" type="Script" id=1]
 [ext_resource path="res://screens/About.gd" type="Script" id=2]
+[ext_resource path="res://res/fonts/heavy20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=5]
+[ext_resource path="res://res/fonts/heavy22.tres" type="DynamicFont" id=6]
 
 [node name="About" type="Control"]
 anchor_right = 1.0
@@ -26,79 +30,86 @@ margin_bottom = 593.0
 custom_constants/separation = 4
 
 [node name="Back" type="Button" parent="PanelContainer/VBoxContainer"]
-margin_right = 41.0
-margin_bottom = 20.0
+margin_right = 42.0
+margin_bottom = 24.0
 size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 4 )
 text = "back"
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
-margin_top = 24.0
+margin_top = 28.0
 margin_right = 1010.0
-margin_bottom = 38.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 6 )
 text = "settings"
 align = 1
 
 [node name="Settings" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 42.0
+margin_top = 60.0
 margin_right = 1010.0
-margin_bottom = 62.0
+margin_bottom = 86.0
 script = ExtResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Settings"]
 margin_right = 1010.0
-margin_bottom = 20.0
+margin_bottom = 26.0
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Settings/HBoxContainer"]
 margin_top = 3.0
-margin_right = 60.0
-margin_bottom = 17.0
+margin_right = 73.0
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 5 )
 text = "language:"
 
 [node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/Settings/HBoxContainer"]
-margin_left = 64.0
+margin_left = 77.0
 margin_right = 1010.0
-margin_bottom = 20.0
+margin_bottom = 26.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
 text = "english"
 items = [ "english", null, false, 0, null, "german", null, false, 1, null ]
 selected = 0
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-margin_top = 66.0
+margin_top = 90.0
 margin_right = 1010.0
-margin_bottom = 75.0
+margin_bottom = 99.0
 custom_constants/separation = 9
 
 [node name="License" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 79.0
+margin_top = 103.0
 margin_right = 1010.0
 margin_bottom = 586.0
 size_flags_vertical = 3
 
 [node name="Title" type="Label" parent="PanelContainer/VBoxContainer/License"]
 margin_right = 1010.0
-margin_bottom = 14.0
+margin_bottom = 25.0
+custom_fonts/font = ExtResource( 3 )
 text = "license"
 align = 1
 
 [node name="Description" type="Label" parent="PanelContainer/VBoxContainer/License"]
-margin_top = 18.0
+margin_top = 29.0
 margin_right = 1010.0
-margin_bottom = 32.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 5 )
 text = "license_desc"
 autowrap = true
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/License"]
-margin_top = 36.0
+margin_top = 53.0
 margin_right = 1010.0
-margin_bottom = 507.0
+margin_bottom = 483.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 4 )
 
 [node name="OPT" type="VBoxContainer" parent="PanelContainer/VBoxContainer/License/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -106,8 +117,9 @@ size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/License/TabContainer/OPT"]
 margin_right = 1002.0
-margin_bottom = 435.0
+margin_bottom = 390.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -799,6 +811,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -1490,6 +1503,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "Copyright (c) 2007-2020 Juan Linietsky, Ariel Manzur.
 Copyright (c) 2014-2020 Godot Engine contributors.
 
@@ -1528,6 +1542,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "GNU AFFERO GENERAL PUBLIC LICENSE
 
 Version 3, 19 November 2007
@@ -1758,6 +1773,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "1. This LICENSE AGREEMENT is between the Python Software Foundation (\"PSF\"), and
    the Individual or Organization (\"Licensee\") accessing and otherwise using Python
    3.7.9 software in source or binary form and its associated documentation.
@@ -1815,6 +1831,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
@@ -2506,6 +2523,7 @@ size_flags_vertical = 3
 margin_right = 1002.0
 margin_bottom = 435.0
 size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 4 )
 text = "1. This LICENSE AGREEMENT is between the copyright holders and the Individual
    or Organization (\"Licensee\") accessing and otherwise using cx_Freeze
    software in source or binary form and its associated documentation.
