@@ -1,6 +1,6 @@
-# Open PDF Toolkit
+# OPT
 
-A little Toolkit to merge, cut, or crop PDF documents. It can be used to do those annoying little tasks with PDF documents. It is completely Open Source and free. To download and install the toolkit, look in the releases.
+OPT is a collection of tools to merge, cut, crop or modify PDF documents. It can be used to do those annoying little tasks with PDF documents. It is completely Open Source and free. To download and install OPT, look in the releases.
 
 ## Requirements 
-Currently requires [PDFToolkit](https://github.com/swip3798/PDFToolkit) v0.2 or higher.
+Currently requires [OPT-Backend](https://github.com/swip3798/OPT-Backend) v0.2.1 or higher.
