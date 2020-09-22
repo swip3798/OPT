@@ -71,8 +71,8 @@ resizable = true
 mode = 1
 access = 2
 filters = PoolStringArray( "*.pdf" )
-current_dir = "/Users/Christian/Documents/Dev/Godot/Open-PDF-Toolkit"
-current_path = "/Users/Christian/Documents/Dev/Godot/Open-PDF-Toolkit/"
+current_dir = "/Users/Christian/Documents/Dev/Godot/OPT"
+current_path = "/Users/Christian/Documents/Dev/Godot/OPT/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
