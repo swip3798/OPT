@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://screens/Merge.gd" type="Script" id=1]
+[ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=2]
+[ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=3]
 
 [node name="Merge" type="Control"]
 anchor_right = 1.0
@@ -19,26 +21,28 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Merge"]
 margin_right = 1024.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 alignment = 2
 
 [node name="Label" type="Label" parent="Merge/HBoxContainer"]
-margin_top = 3.0
-margin_right = 933.0
-margin_bottom = 17.0
+margin_top = 2.0
+margin_right = 929.0
+margin_bottom = 22.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
 text = "merge_long"
 
 [node name="AddDoc" type="Button" parent="Merge/HBoxContainer"]
-margin_left = 937.0
+margin_left = 933.0
 margin_right = 1024.0
-margin_bottom = 20.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 3 )
 text = "add_pdf_file"
 
 [node name="ItemList" type="ItemList" parent="Merge"]
-margin_top = 24.0
+margin_top = 28.0
 margin_right = 1024.0
-margin_bottom = 576.0
+margin_bottom = 572.0
 size_flags_vertical = 3
 select_mode = 1
 
@@ -49,15 +53,17 @@ margin_left = -129.0
 margin_top = 10.0
 margin_right = -8.0
 margin_bottom = 34.0
+custom_fonts/font = ExtResource( 3 )
 text = "remove"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Merge" type="Button" parent="Merge"]
-margin_top = 580.0
+margin_top = 576.0
 margin_right = 1024.0
 margin_bottom = 600.0
+custom_fonts/font = ExtResource( 3 )
 text = "merge"
 
 [node name="FileDialog" type="FileDialog" parent="."]

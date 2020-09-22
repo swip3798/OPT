@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://widgets/PageHolder.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 5.0
@@ -16,7 +17,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 5.0
 bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 border_width_left = 1
@@ -28,7 +29,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 10.0
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
@@ -41,15 +42,15 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 93.0
-margin_bottom = 82.0
+margin_right = 1788.0
+margin_bottom = 1843.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-margin_right = 93.0
-margin_bottom = 64.0
+margin_right = 1788.0
+margin_bottom = 1821.0
 texture = ExtResource( 2 )
 stretch_mode = 6
 __meta__ = {
@@ -57,21 +58,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_top = 68.0
-margin_right = 93.0
-margin_bottom = 82.0
+margin_top = 1825.0
+margin_right = 1788.0
+margin_bottom = 1843.0
+custom_fonts/font = ExtResource( 3 )
 text = "dwadawdwadw"
 align = 1
 
 [node name="Button" type="Button" parent="."]
-margin_left = 97.0
-margin_right = 107.0
-margin_bottom = 82.0
+margin_left = 1792.0
+margin_right = 1802.0
+margin_bottom = 1843.0
 focus_mode = 1
 custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/normal = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 enabled_focus_mode = 1
 [connection signal="focus_exited" from="Button" to="." method="_on_Button_focus_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
