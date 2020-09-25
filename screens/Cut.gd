@@ -36,7 +36,7 @@ func _on_cut_point_changed(page_number):
 func _on_Cut_pressed():
 	dialog.deselect_items()
 	dialog.mode = FileDialog.MODE_OPEN_DIR
-	dialog.show()
+	dialog.popup()
 
 func _on_FileDialog_dir_selected(dir):
 	var output_prefix: String = dir + "/" + file_chooser.selected_path.get_file().get_basename()

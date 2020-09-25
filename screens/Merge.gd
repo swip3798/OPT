@@ -1,18 +1,15 @@
 extends Control
 
-func _ready():
-	pass
-
+onready var dialog = $FileDialog
 
 func _on_AddDoc_pressed():
-	$FileDialog.mode = FileDialog.MODE_OPEN_FILES
-	$FileDialog.deselect_items()
-	$FileDialog.show()
+	dialog.mode = FileDialog.MODE_OPEN_FILES
+	dialog.deselect_items()
+	dialog.popup()
 
 
 func _on_FileDialog_files_selected(paths):
 	for path in paths:
-		$Merge/ItemList
 		$Merge/ItemList.add_item(path)
 
 
@@ -26,14 +23,15 @@ func _on_RemoveDoc_pressed():
 
 func _on_Merge_pressed():
 	if $Merge/ItemList.get_item_count() == 0:
-		$AlertNoFile.show()
+		$AlertNoFile.popup()
 		return
 	elif $Merge/ItemList.get_item_count() == 1:
-		$AlertOneFile.show()
+		$AlertOneFile.popup()
 		return 
-	$FileDialog.mode = FileDialog.MODE_SAVE_FILE
-	$FileDialog.deselect_items()
-	$FileDialog.show()
+	dialog.mode = FileDialog.MODE_SAVE_FILE
+	dialog.window_title = tr("save_file")
+	dialog.deselect_items()
+	dialog.popup()
 
 
 func _on_FileDialog_file_selected(path):
