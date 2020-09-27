@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://widgets/PageDragger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screens/Rearrange.gd" type="Script" id=2]
+
+[node name="Rearrange" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageCollection" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageHolder" parent="PageCollection" instance=ExtResource( 1 )]
+margin_right = 163.0
+margin_bottom = 233.0
+
+[node name="PageHolder2" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 163.0
+margin_right = 326.0
+margin_bottom = 233.0
+page_number = 1
+
+[node name="PageHolder3" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 326.0
+margin_right = 489.0
+margin_bottom = 233.0
+page_number = 2
+
+[node name="PageHolder4" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 489.0
+margin_right = 652.0
+margin_bottom = 233.0
+page_number = 3
+
+[node name="PageHolder5" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 652.0
+margin_right = 815.0
+margin_bottom = 233.0
+page_number = 4
+
+[node name="PageHolder6" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 815.0
+margin_right = 978.0
+margin_bottom = 233.0
+page_number = 5
+
+[node name="PageHolder7" parent="PageCollection" instance=ExtResource( 1 )]
+margin_top = 233.0
+margin_right = 163.0
+margin_bottom = 466.0
+page_number = 6
+
+[node name="PageHolder8" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 163.0
+margin_top = 233.0
+margin_right = 326.0
+margin_bottom = 466.0
+page_number = 7
+
+[node name="PageHolder9" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 326.0
+margin_top = 233.0
+margin_right = 489.0
+margin_bottom = 466.0
+page_number = 8
+
+[node name="PageHolder10" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 489.0
+margin_top = 233.0
+margin_right = 652.0
+margin_bottom = 466.0
+page_number = 9
+
+[node name="PageHolder11" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 652.0
+margin_top = 233.0
+margin_right = 815.0
+margin_bottom = 466.0
+page_number = 10
+
+[node name="PageHolder12" parent="PageCollection" instance=ExtResource( 1 )]
+margin_left = 815.0
+margin_top = 233.0
+margin_right = 978.0
+margin_bottom = 466.0
+page_number = 11
