@@ -14,9 +14,13 @@ func show_folder(path: String):
 	show_dir(path)
 
 func clear_thumbnail_path():
+	var output = []
+	var thumbnail_path: String = PdfBackend.get_thumbnail_path()
 	if OS.get_name() == "Windows":
 # warning-ignore:return_value_discarded
-		OS.execute("del", ["/F", "/Q", PdfBackend.get_thumbnail_path() + "*"], true)
+		thumbnail_path = backslash_path(thumbnail_path)
+		OS.execute("del", ["/F", "/Q", thumbnail_path + "*"], true, output, true)
 	else:
 # warning-ignore:return_value_discarded
-		OS.execute("rm", ["-rf", PdfBackend.get_thumbnail_path() + "*"], true)
+		OS.execute("rm", ["-rf", thumbnail_path + "*"], true, output, true)
+	print("clear_thumbnail_path: ", output)

@@ -45,7 +45,7 @@ margin_right = 1024.0
 margin_bottom = 520.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 8
+columns = 6
 
 [node name="Cut" type="Button" parent="VBoxContainer"]
 margin_top = 576.0

@@ -35,3 +35,9 @@ open_file,Open,Öffnen
 Save,Save,Speichern
 Open,Open,Öffnen
 Select Current Folder,Select Current Folder,Wähle aktuellen Ordner aus
+Open a File,Open a File,Öffne eine Datei
+rearrange_tab_resize,Rearrange,Neu ordnen
+override_or_new_copy,Do you want to override the original file or save a new copy?,Die Originaldatei überschreiben oder eine neue Kopie abspeichern?
+override,Override,Überschreiben
+newcopy,New Copy,Neue Kopie
+alert_no_file,There is no PDF file opened!,Es wurde keine PDF Datei geöffnet!

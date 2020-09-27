@@ -43,7 +43,7 @@ func drop_data(_pos, data):
 	if state == STATE_RIGHT:
 		next_idx += 1
 	get_parent().move_child(dropped, next_idx)
-	get_parent().get_parent().reset_neighbors()
+	get_parent().reset_neighbors()
 	separator.disabled = true
 	left_dragger.disabled = true
 

@@ -11,7 +11,8 @@ onready var file_chooser: HBoxContainer = $VBoxContainer/FileChooser
 func _on_FileChooser_valid_file_selected(path):
 	Utility.clear_thumbnail_path()
 	for i in page_holder:
-		i.free()
+		i.queue_free()
+	page_holder = []
 # warning-ignore:return_value_discarded
 	PdfBackend.render_thumbnails(path)
 	page_count = PdfBackend.get_page_count(path)
@@ -34,9 +35,10 @@ func _on_cut_point_changed(page_number):
 		page_collection.get_child(i).set_alpha(1)
 
 func _on_Cut_pressed():
-	dialog.deselect_items()
-	dialog.mode = FileDialog.MODE_OPEN_DIR
-	dialog.popup()
+	if page_collection.get_child_count() > 0:
+		dialog.deselect_items()
+		dialog.mode = FileDialog.MODE_OPEN_DIR
+		dialog.popup()
 
 func _on_FileDialog_dir_selected(dir):
 	var output_prefix: String = dir + "/" + file_chooser.selected_path.get_file().get_basename()
