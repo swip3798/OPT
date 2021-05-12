@@ -1,6 +1,7 @@
 extends Control
 
-onready var dialog = $FileDialog
+onready var dialog := $FileDialog
+onready var eemerge := $MergePDF
 
 func _on_AddDoc_pressed():
 	dialog.mode = FileDialog.MODE_OPEN_FILES
@@ -35,10 +36,21 @@ func _on_Merge_pressed():
 
 
 func _on_FileDialog_file_selected(path):
-	var output = []
 	var docs = []
 	for i in range($Merge/ItemList.get_item_count()):
 		docs.append($Merge/ItemList.get_item_text(i))
-	PdfBackend.merge_docs(docs, path)
-	Utility.show_folder(path)
+	print(docs)
+	eemerge.execute({
+		"input_files": docs,
+		"output_file": path
+	})
+	
 		#OS.execute("shellscripts\\open_file_ex.bat", [path], true, output, true)
+
+
+func _on_EasyEmbedCommand_base_path_wrong(stdouterr):
+	print("stdouterr ", stdouterr)
+
+
+func _on_MergePDF_command_successful(response):
+	Utility.show_folder(response.get("output_file", ""))

@@ -1,6 +1,6 @@
 extends Control
 
-onready var pcollection: GridContainer = $VBoxContainer/ScrollContainer/PageCollection
+onready var pcollection: GridContainer = $VBoxContainer/Control/ScrollContainer/PageCollection
 var page_dragger_scene: PackedScene = preload("res://widgets/PageDragger.tscn")
 var page_count: int
 onready var dialog: FileDialog = $FileDialog
@@ -29,7 +29,7 @@ func _on_FileChooser_valid_file_selected(path):
 
 
 func _on_Override_pressed():
-	pass # Replace with function body.
+	_on_FileDialog_file_selected($VBoxContainer/FileChooser.selected_path)
 
 
 func _on_NewCopy_pressed():
@@ -44,3 +44,7 @@ func _on_FileDialog_file_selected(path):
 
 func _on_Cancel_pressed():
 	$WindowDialog.hide()
+
+
+func _on_RemoveButton_pressed():
+	pass # Replace with function body.

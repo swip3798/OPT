@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://screens/Merge.gd" type="Script" id=1]
 [ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=2]
 [ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://widgets/FileDialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/easy_embed/EasyEmbedCommand.gd" type="Script" id=5]
 
 [node name="Merge" type="Control"]
 anchor_right = 1.0
@@ -101,8 +102,17 @@ dialog_autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MergePDF" type="Node" parent="."]
+script = ExtResource( 5 )
+basepath = "backend\\python.exe"
+baseargs = PoolStringArray( "backend\\main.py" )
+command = "merge_files"
+
 [connection signal="pressed" from="Merge/HBoxContainer/AddDoc" to="." method="_on_AddDoc_pressed"]
 [connection signal="pressed" from="Merge/ItemList/RemoveDoc" to="." method="_on_RemoveDoc_pressed"]
 [connection signal="pressed" from="Merge/Merge" to="." method="_on_Merge_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="files_selected" from="FileDialog" to="." method="_on_FileDialog_files_selected"]
+[connection signal="base_path_wrong" from="MergePDF" to="." method="_on_EasyEmbedCommand_base_path_wrong"]
+[connection signal="command_successful" from="MergePDF" to="." method="_on_MergePDF_command_successful"]
