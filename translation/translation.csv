@@ -42,3 +42,7 @@ override_or_new_copy,Do you want to override the original file or save a new cop
 override,Override,Überschreiben
 newcopy,New Copy,Neue Kopie
 alert_no_file,There is no PDF file opened!,Es wurde keine PDF Datei geöffnet!
+error_occured_exception,An error occured while processing the PDF files,Es ist ein Fehler bei der Verarbeitung der PDF Dateien passiert
+error_embed_exception,Error,Fehler
+detailed_information,Detailed information,Erweiterte Informationen
+drop_files_here_caps,DROP FILES HERE,HIER DATEIEN HINZIEHEN

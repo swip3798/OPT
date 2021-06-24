@@ -144,6 +144,7 @@ dialog_autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="valid_file_selected" from="VBoxContainer/FileChooser" to="." method="_on_FileChooser_valid_file_selected"]
 [connection signal="pressed" from="VBoxContainer/Control/RemoveButton" to="." method="_on_RemoveButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

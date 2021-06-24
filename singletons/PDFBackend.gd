@@ -51,13 +51,3 @@ func select_pages(path: String, page_sequence: Array, output_path: String) -> Ar
 	OS.execute(backend_path + "pageselect", arguments, true, output, true)
 	print(output)
 	return output
-
-func cut_document(path: String, cut_point_inc: int, page_count: int, output_prefix: String):
-	var page_sequence1: Array = []
-	for i in range(cut_point_inc + 1):
-		page_sequence1.append(i)
-	var page_sequence2: Array = []
-	for i in range(cut_point_inc + 1, page_count):
-		page_sequence2.append(i)
-	select_pages(path, page_sequence1, output_prefix + "-1.pdf")
-	select_pages(path, page_sequence2, output_prefix + "-2.pdf")

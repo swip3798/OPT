@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 Utility="*res://singletons/Utility.gd"
 PdfBackend="*res://singletons/PDFBackend.gd"
 Settings="*res://singletons/Settings.gd"
+EEBackendManager="*res://addons/easy_embed/singleton/EEBackendManager.gd"
 
 [editor_plugins]
 

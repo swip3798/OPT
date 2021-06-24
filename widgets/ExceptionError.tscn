@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://widgets/ExceptionError.gd" type="Script" id=1]
+
+[node name="ExceptionError" type="AcceptDialog"]
+margin_left = 138.0
+margin_top = 130.0
+margin_right = 675.0
+margin_bottom = 364.0
+popup_exclusive = true
+window_title = "error_embed_exception"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 521.0
+margin_bottom = 14.0
+text = "error_occured_exception"
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 521.0
+margin_bottom = 58.0
+text = "detailed_information"
+
+[node name="MessageBox" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 521.0
+margin_bottom = 62.0
+focus_mode = 2
+size_flags_vertical = 2
+selection_enabled = true
+
+[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_CheckButton_toggled"]
