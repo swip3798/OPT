@@ -97,5 +97,6 @@ script = ExtResource( 4 )
 margin_left = 163.0
 margin_right = 163.0
 margin_bottom = 233.0
+
 [connection signal="gui_input" from="." to="." method="_on_PageDragger_gui_input"]
 [connection signal="mouse_exited" from="." to="." method="_on_PageDragger_mouse_exited"]

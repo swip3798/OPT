@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://screens/PageCollection.gd" type="Script" id=1]
 [ext_resource path="res://screens/Rearrange.gd" type="Script" id=2]
 [ext_resource path="res://widgets/FileChooser.tscn" type="PackedScene" id=3]
 [ext_resource path="res://widgets/FileDialog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://addons/easy_embed/HTTP/EECommandHTTP.gd" type="Script" id=6]
 
 [node name="Rearrange" type="Control"]
 anchor_right = 1.0
@@ -145,6 +146,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RenderThumbs" type="Node" parent="."]
+script = ExtResource( 6 )
+command = "render_page_thumbnails"
+timeout = 10.0
+
+[node name="Rearrange" type="Node" parent="."]
+script = ExtResource( 6 )
+command = "select_pages"
+
 [connection signal="valid_file_selected" from="VBoxContainer/FileChooser" to="." method="_on_FileChooser_valid_file_selected"]
 [connection signal="pressed" from="VBoxContainer/Control/RemoveButton" to="." method="_on_RemoveButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
@@ -152,3 +162,4 @@ __meta__ = {
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Override" to="." method="_on_Override_pressed"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/NewCopy" to="." method="_on_NewCopy_pressed"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="command_successful" from="RenderThumbs" to="." method="_on_RenderThumbs_command_successful"]
