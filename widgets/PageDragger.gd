@@ -17,6 +17,7 @@ func get_drag_data(_pos):
 	var drag: HBoxContainer = dragger_scene.instance()
 	drag.rect_scale = Vector2(0.5, 0.5)
 	set_drag_preview(drag)
+	get_parent().set_drag_on(true)
 	return get_index()
 
 func can_drop_data(_pos, data):
@@ -24,14 +25,18 @@ func can_drop_data(_pos, data):
 
 func _on_PageDragger_gui_input(event):
 	if event is InputEventMouseMotion:
-		var is_left = get_local_mouse_position().x <= rect_size.x / 2
-		separator.disabled = is_left
-		if left_dragger != null:
-			left_dragger.disabled = not is_left
-		if is_left:
-			state = STATE_LEFT
+		if get_parent().drag_on:
+			var is_left = get_local_mouse_position().x <= rect_size.x / 2
+			separator.disabled = is_left
+			if left_dragger != null:
+				left_dragger.disabled = not is_left
+			if is_left:
+				state = STATE_LEFT
+			else:
+				state = STATE_RIGHT
 		else:
-			state = STATE_RIGHT
+			left_dragger.disabled = true
+			separator.disabled = true
 
 func drop_data(_pos, data):
 	print("data:", data)
@@ -40,12 +45,18 @@ func drop_data(_pos, data):
 	print("Left:", state == STATE_LEFT)
 	var dropped = get_parent().get_child(data)
 	var next_idx = get_index()
+	if state == STATE_LEFT:
+		if data < page_number:
+			next_idx -= 1
 	if state == STATE_RIGHT:
-		next_idx += 1
+		if data > page_number:
+			next_idx += 1
+	next_idx = max(0, next_idx)
 	get_parent().move_child(dropped, next_idx)
 	get_parent().reset_neighbors()
 	separator.disabled = true
 	left_dragger.disabled = true
+	get_parent().set_drag_on(false)
 
 
 func _on_PageDragger_mouse_exited():

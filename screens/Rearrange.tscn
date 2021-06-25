@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://screens/PageCollection.gd" type="Script" id=1]
 [ext_resource path="res://screens/Rearrange.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://widgets/FileDialog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://addons/easy_embed/HTTP/EECommandHTTP.gd" type="Script" id=6]
+[ext_resource path="res://res/icons/trash.svg" type="Texture" id=7]
+[ext_resource path="res://screens/RemoveButton.gd" type="Script" id=8]
+[ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=9]
 
 [node name="Rearrange" type="Control"]
 anchor_right = 1.0
@@ -24,12 +27,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 9 )
+text = "rearrange_description"
+
 [node name="FileChooser" parent="VBoxContainer" instance=ExtResource( 3 )]
-margin_bottom = 24.0
+margin_top = 24.0
+margin_bottom = 48.0
 dialog_path = NodePath("../../FileDialog")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
-margin_top = 28.0
+margin_top = 52.0
 margin_right = 1024.0
 margin_bottom = 572.0
 size_flags_horizontal = 3
@@ -52,28 +62,19 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="RemoveButton" type="Button" parent="VBoxContainer/Control"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -84.7842
-margin_top = 11.8921
-margin_right = -23.7842
-margin_bottom = 31.8921
-custom_fonts/font = ExtResource( 5 )
-text = "remove"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+removeButton = NodePath("../../../../RemoveButton")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_top = 576.0
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = ExtResource( 5 )
+disabled = true
 text = "Save"
 
 [node name="FileDialog" parent="." instance=ExtResource( 4 )]
+current_dir = "/Users/d070527/Documents/Private/Programming/Godot/OPT"
+current_path = "/Users/d070527/Documents/Private/Programming/Godot/OPT/"
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 margin_left = 282.865
@@ -155,8 +156,21 @@ timeout = 10.0
 script = ExtResource( 6 )
 command = "select_pages"
 
+[node name="RemoveButton" type="Button" parent="."]
+visible = false
+anchor_left = 0.978
+anchor_top = 0.828
+anchor_right = 0.978
+anchor_bottom = 0.828
+margin_left = -53.0
+margin_bottom = 56.0
+icon = ExtResource( 7 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="valid_file_selected" from="VBoxContainer/FileChooser" to="." method="_on_FileChooser_valid_file_selected"]
-[connection signal="pressed" from="VBoxContainer/Control/RemoveButton" to="." method="_on_RemoveButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Override" to="." method="_on_Override_pressed"]

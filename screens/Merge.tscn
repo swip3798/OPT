@@ -72,6 +72,8 @@ disabled = true
 text = "merge"
 
 [node name="FileDialog" parent="." instance=ExtResource( 4 )]
+current_dir = "/Users/d070527/Documents/Private/Programming/Godot/OPT"
+current_path = "/Users/d070527/Documents/Private/Programming/Godot/OPT/"
 
 [node name="ExceptionError" parent="." instance=ExtResource( 6 )]
 margin_left = 262.0
