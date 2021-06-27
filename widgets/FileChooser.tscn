@@ -23,5 +23,6 @@ margin_right = 1024.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 2 )
 text = "browse"
+
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="Browse" to="." method="_on_Browse_pressed"]

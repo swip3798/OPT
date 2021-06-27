@@ -801,7 +801,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -1493,7 +1493,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -1532,7 +1532,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -1763,7 +1763,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -1821,7 +1821,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -2513,7 +2513,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 32.0
+margin_top = 36.0
 margin_right = -4.0
 margin_bottom = -4.0
 size_flags_horizontal = 3
@@ -2564,5 +2564,6 @@ text = "1. This LICENSE AGREEMENT is between the copyright holders and the Indiv
 
 8. By copying, installing or otherwise using cx_Freeze, Licensee agrees to be
    bound by the terms and conditions of this License Agreement."
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/Settings/HBoxContainer/OptionButton" to="PanelContainer/VBoxContainer/Settings" method="_on_OptionButton_item_selected"]

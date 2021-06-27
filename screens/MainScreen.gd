@@ -1,4 +1,4 @@
 extends Control
 
-func _on_About_pressed():
-	get_tree().change_scene("res://screens/About.tscn")
+func _ready():
+	EEBackendManager.start_ee_backend_http("backend\\python.exe", ["backend\\main.py"])

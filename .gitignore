@@ -6,3 +6,9 @@
 # Imported translations (automatically generated from CSV files)
 *.translation
 *.pdf
+
+# backend for debugging
+/backend
+
+#distribution folder
+/dist

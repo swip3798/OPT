@@ -10,17 +10,40 @@ remove,Remove,Entfernen
 alert,Alert!,Achtung!
 alert_merge_no_files,No files are selected for merging!,Keine Dateien wurden zur Zusammenführung ausgewählt!
 alert_merge_one_file,Only one file is selected for merging. Two files need to be selected!,Es wurde nur eine Datei für eine Zusammenführung ausgewählt. Bitte wählen Sie eine zweite Datei aus.
-cut,Cut,Trennen
-cut_tab_resize,Cut,Trennen
-cut_at_position,Cut PDF file at position,An gewählter Position PDF Dokument aufteilen
-cut_description,Choose a PDF file and cut it in two seperate PDF files.,Wähle ein PDF Dokument und zerteile in zwei neue PDF Dateien.
+cut,Split,Trennen
+cut_tab_resize,Split,Trennen
+cut_at_position,Split PDF file at position,An gewählter Position PDF Dokument aufteilen
+cut_description,Choose a PDF file and split it in two seperate PDF files.,Wähle ein PDF Dokument und zerteile in zwei neue PDF Dateien.
 choose_pdf_file,Choose a PDF file,Wähle ein PDF Dokument
 page,Page,Seite
 about,About,Über OPT
 settings,Settings,Einstellungen
+settings_and_about,Settings,Einstellungen
 back,Back,Zurück
 language:,Language:,Sprache:
 english,English,Englisch
 german,German,Deutsch
 license,License,Lizenz
 license_desc,"OPT is Open-Source and released under the GPLv3 license. It was build using the Godot engine and MuPDF. The license texts of all used third-party software, as well as the license of OPT itself, can be found below.",OPT ist Open-Source und wurde unter der GPLv3 Lizenz veröffentlicht. Zur Entwicklung wurde die Godot Engine und die MuPDF Bibliothek eingesetzt. Die Lizenztexte der genutzten Open-Source-Software sowie der Lizenztext von OPT können hier aufgerufen werden.
+Open File(s),Open File(s),Öffne Datei(en)
+Directories & Files:,Directories & Files:,Ordner & Dateien:
+Path:,Path:,Pfad:
+File:,File:,Datei:
+save_file,Save file,Datei speichern
+Create Folder,Create Folder,Neuer Ordner
+cancel,Cancel,Abbrechen
+open_file,Open,Öffnen
+Save,Save,Speichern
+Open,Open,Öffnen
+Select Current Folder,Select Current Folder,Wähle aktuellen Ordner aus
+Open a File,Open a File,Öffne eine Datei
+rearrange_tab_resize,Rearrange,Neu ordnen
+override_or_new_copy,Do you want to override the original file or save a new copy?,Die Originaldatei überschreiben oder eine neue Kopie abspeichern?
+override,Override,Überschreiben
+newcopy,New Copy,Neue Kopie
+alert_no_file,There is no PDF file opened!,Es wurde keine PDF Datei geöffnet!
+error_occured_exception,An error occured while processing the PDF files,Es ist ein Fehler bei der Verarbeitung der PDF Dateien passiert
+error_embed_exception,Error,Fehler
+detailed_information,Detailed information,Erweiterte Informationen
+drop_files_here_caps,DROP FILES HERE,HIER DATEIEN HINZIEHEN
+rearrange_description,Choose a PDF file and rearrange or delete pages.,Wähle ein PDF Dokument und verändere die Reihenfolge von Seiten oder lösche sie.

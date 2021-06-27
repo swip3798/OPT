@@ -4,14 +4,22 @@ export var page_number: int = 0
 var cut_point: bool = false
 var last: bool = false
 
+onready var tex_rect: TextureRect = $VBoxContainer/TextureRect
+onready var label: Label = $VBoxContainer/Label
+
 signal cut_point_changed(page_number)
 
 func _ready():
 	$VBoxContainer/Label.text = str(page_number)
 
-func load_texture():
-	$VBoxContainer/TextureRect.texture = PdfBackend.get_thumbnail(page_number)
-	$VBoxContainer/Label.text = tr("page") + " " + str(page_number + 1)
+func load_texture(b64data: String):
+	var buffer := Marshalls.base64_to_raw(b64data)
+	var texture = ImageTexture.new();
+	var image = Image.new();
+	image.load_png_from_buffer(buffer);
+	texture.create_from_image(image, 0);
+	tex_rect.texture = texture
+	label.text = tr("page") + " " + str(page_number + 1)
 	
 func make_last():
 	last = true

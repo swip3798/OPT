@@ -24,9 +24,14 @@ func _on_Browse_pressed():
 	dialog.mode = FileDialog.MODE_OPEN_FILE
 	dialog.deselect_items()
 	dialog.dialog_text = tr(info_text_key)
-	dialog.show()
+	dialog.popup()
 
 func _on_file_selected(path):
 	if dialog.mode == FileDialog.MODE_OPEN_FILE:
 		$TextEdit.text = path
 		_validate_and_emit(path)
+
+func set_selected_path(path):
+	selected_path = path
+	$TextEdit.text = path
+	_validate_and_emit(path)
