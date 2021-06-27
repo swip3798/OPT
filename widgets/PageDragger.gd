@@ -16,6 +16,7 @@ func reset_first():
 func get_drag_data(_pos):
 	var drag: HBoxContainer = dragger_scene.instance()
 	drag.rect_scale = Vector2(0.5, 0.5)
+	drag.tex_rect = tex_rect
 	set_drag_preview(drag)
 	get_parent().set_drag_on(true)
 	return get_index()

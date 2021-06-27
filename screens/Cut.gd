@@ -16,7 +16,7 @@ onready var drop_files_info := $DropFilesInfo
 func _ready():
 	get_tree().connect("files_dropped", self, "_get_dropped_files_path")
 
-func _get_dropped_files_path(files: PoolStringArray, screen: int):
+func _get_dropped_files_path(files: PoolStringArray, _screen: int):
 	for file in files: 
 		if file.get_extension() == "pdf":
 			file_chooser.set_selected_path(file)

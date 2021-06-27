@@ -25,6 +25,10 @@ PdfBackend="*res://singletons/PDFBackend.gd"
 Settings="*res://singletons/Settings.gd"
 EEBackendManager="*res://addons/easy_embed/singleton/EEBackendManager.gd"
 
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/easy_embed/plugin.cfg" )

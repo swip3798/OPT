@@ -1,0 +1,200 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://screens/PageCollection.gd" type="Script" id=1]
+[ext_resource path="res://screens/Img2Pdf.gd" type="Script" id=2]
+[ext_resource path="res://widgets/FileChooser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://widgets/FileDialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://res/fonts/button_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://addons/easy_embed/HTTP/EECommandHTTP.gd" type="Script" id=6]
+[ext_resource path="res://res/icons/trash.svg" type="Texture" id=7]
+[ext_resource path="res://screens/RemoveButton.gd" type="Script" id=8]
+[ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=9]
+[ext_resource path="res://widgets/ExceptionError.tscn" type="PackedScene" id=10]
+[ext_resource path="res://res/fonts/heavy20.tres" type="DynamicFont" id=11]
+
+[node name="Img2Pdf" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 9 )
+text = "img2pdf_description"
+
+[node name="FileChooser" parent="VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 24.0
+margin_bottom = 48.0
+dialog_path = NodePath("../../OpenFileDialog")
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 1024.0
+margin_bottom = 572.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PageCollection" type="GridContainer" parent="VBoxContainer/Control/ScrollContainer"]
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+removeButton = NodePath("../../../../RemoveButton")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 576.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = ExtResource( 5 )
+disabled = true
+text = "Save"
+
+[node name="SaveFileDialog" parent="." instance=ExtResource( 4 )]
+
+[node name="OpenFileDialog" parent="." instance=ExtResource( 4 )]
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+margin_left = 282.865
+margin_top = 212.053
+margin_right = 634.865
+margin_bottom = 314.053
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 13
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WindowDialog/VBoxContainer"]
+margin_top = 27.0
+margin_right = 352.0
+margin_bottom = 41.0
+text = "override_or_new_copy"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowDialog/VBoxContainer"]
+margin_top = 54.0
+margin_right = 352.0
+margin_bottom = 74.0
+custom_constants/separation = 40
+alignment = 1
+
+[node name="Override" type="Button" parent="WindowDialog/VBoxContainer/HBoxContainer"]
+margin_left = 42.0
+margin_right = 107.0
+margin_bottom = 20.0
+text = "override"
+
+[node name="NewCopy" type="Button" parent="WindowDialog/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 215.0
+margin_bottom = 20.0
+text = "newcopy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel" type="Button" parent="WindowDialog/VBoxContainer/HBoxContainer"]
+margin_left = 255.0
+margin_right = 309.0
+margin_bottom = 20.0
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_left = 278.053
+margin_top = 167.186
+margin_right = 713.053
+margin_bottom = 256.186
+popup_exclusive = true
+window_title = "alert"
+dialog_text = "alert_no_file"
+dialog_autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RenderThumbs" type="Node" parent="."]
+script = ExtResource( 6 )
+command = "render_page_thumbnails"
+timeout = 10.0
+
+[node name="Rearrange" type="Node" parent="."]
+script = ExtResource( 6 )
+command = "select_pages"
+
+[node name="RemoveButton" type="Button" parent="."]
+visible = false
+anchor_left = 0.978
+anchor_top = 0.828
+anchor_right = 0.978
+anchor_bottom = 0.828
+margin_left = -53.0
+margin_bottom = 56.0
+icon = ExtResource( 7 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExceptionError" parent="." instance=ExtResource( 10 )]
+
+[node name="DropFilesInfo" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.26 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 11 )
+text = "drop_files_here_caps"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="valid_file_selected" from="VBoxContainer/FileChooser" to="." method="_on_FileChooser_valid_file_selected"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
+[connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Override" to="." method="_on_Override_pressed"]
+[connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/NewCopy" to="." method="_on_NewCopy_pressed"]
+[connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="command_failed" from="RenderThumbs" to="." method="_on_command_failed"]
+[connection signal="command_successful" from="RenderThumbs" to="." method="_on_RenderThumbs_command_successful"]
+[connection signal="embedding_error" from="RenderThumbs" to="." method="_on_embedding_error"]
+[connection signal="command_failed" from="Rearrange" to="." method="_on_command_failed"]
+[connection signal="command_successful" from="Rearrange" to="." method="_on_Rearrange_command_successful"]
+[connection signal="embedding_error" from="Rearrange" to="." method="_on_embedding_error"]

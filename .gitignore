@@ -9,3 +9,6 @@
 
 # backend for debugging
 /backend
+
+#distribution folder
+/dist

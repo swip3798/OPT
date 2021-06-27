@@ -13,10 +13,7 @@ func _ready():
 	$VBoxContainer/Label.text = str(page_number)
 
 func load_texture(b64data: String):
-	print("Before decoding ", page_number)
 	var buffer := Marshalls.base64_to_raw(b64data)
-	print("b64 decoded")
-	print("page number ", page_number)
 	var texture = ImageTexture.new();
 	var image = Image.new();
 	image.load_png_from_buffer(buffer);

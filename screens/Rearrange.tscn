@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://screens/PageCollection.gd" type="Script" id=1]
 [ext_resource path="res://screens/Rearrange.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://res/icons/trash.svg" type="Texture" id=7]
 [ext_resource path="res://screens/RemoveButton.gd" type="Script" id=8]
 [ext_resource path="res://res/fonts/regular16.tres" type="DynamicFont" id=9]
+[ext_resource path="res://widgets/ExceptionError.tscn" type="PackedScene" id=10]
+[ext_resource path="res://res/fonts/heavy20.tres" type="DynamicFont" id=11]
 
 [node name="Rearrange" type="Control"]
 anchor_right = 1.0
@@ -36,7 +38,7 @@ text = "rearrange_description"
 [node name="FileChooser" parent="VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 24.0
 margin_bottom = 48.0
-dialog_path = NodePath("../../FileDialog")
+dialog_path = NodePath("../../OpenFileDialog")
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 margin_top = 52.0
@@ -72,9 +74,9 @@ custom_fonts/font = ExtResource( 5 )
 disabled = true
 text = "Save"
 
-[node name="FileDialog" parent="." instance=ExtResource( 4 )]
-current_dir = "/Users/d070527/Documents/Private/Programming/Godot/OPT"
-current_path = "/Users/d070527/Documents/Private/Programming/Godot/OPT/"
+[node name="SaveFileDialog" parent="." instance=ExtResource( 4 )]
+
+[node name="OpenFileDialog" parent="." instance=ExtResource( 4 )]
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 margin_left = 282.865
@@ -170,10 +172,29 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ExceptionError" parent="." instance=ExtResource( 10 )]
+
+[node name="DropFilesInfo" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0.26 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 11 )
+text = "drop_files_here_caps"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="valid_file_selected" from="VBoxContainer/FileChooser" to="." method="_on_FileChooser_valid_file_selected"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Override" to="." method="_on_Override_pressed"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/NewCopy" to="." method="_on_NewCopy_pressed"]
 [connection signal="pressed" from="WindowDialog/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="command_failed" from="RenderThumbs" to="." method="_on_command_failed"]
 [connection signal="command_successful" from="RenderThumbs" to="." method="_on_RenderThumbs_command_successful"]
+[connection signal="embedding_error" from="RenderThumbs" to="." method="_on_embedding_error"]
+[connection signal="command_failed" from="Rearrange" to="." method="_on_command_failed"]
+[connection signal="command_successful" from="Rearrange" to="." method="_on_Rearrange_command_successful"]
+[connection signal="embedding_error" from="Rearrange" to="." method="_on_embedding_error"]
