@@ -75,8 +75,11 @@ disabled = true
 text = "Save"
 
 [node name="SaveFileDialog" parent="." instance=ExtResource( 4 )]
+window_title = "Save a File"
+mode = 4
 
 [node name="OpenFileDialog" parent="." instance=ExtResource( 4 )]
+filters = PoolStringArray( "*.png", "*.jpg", "*.bmp", "*.jpeg" )
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 margin_left = 282.865

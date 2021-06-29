@@ -16,6 +16,7 @@ func start_ee_backend_http(basepath: String, baseargs: PoolStringArray = []):
 	self.basepath = basepath
 	self.baseargs = baseargs
 	_pid = OS.execute(basepath, baseargs, false)
+	print(_pid)
 
 func stop_ee_backend():
 	OS.kill(_pid)

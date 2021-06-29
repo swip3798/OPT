@@ -20,7 +20,7 @@ func _ready():
 
 func _get_dropped_files_path(files: PoolStringArray, _screen: int):
 	for file in files: 
-		if file.get_extension() == "pdf":
+		if file.get_extension() in ["bmp", "png", "jpg", ]:
 			file_chooser.set_selected_path(file)
 			break
 
