@@ -33,11 +33,11 @@ text = "cut_description"
 
 [node name="FileChooser" parent="VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 24.0
-margin_bottom = 48.0
+margin_bottom = 52.0
 dialog_path = NodePath("../../FileDialog")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
-margin_top = 52.0
+margin_top = 56.0
 margin_right = 1024.0
 margin_bottom = 572.0
 size_flags_horizontal = 3
@@ -46,7 +46,7 @@ follow_focus = true
 
 [node name="PageCollection" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
 margin_right = 1024.0
-margin_bottom = 520.0
+margin_bottom = 516.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 6
