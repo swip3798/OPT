@@ -38,6 +38,7 @@ func _on_FileChooser_valid_file_selected(path):
 	
 func _on_RenderThumbs_command_successful(response):
 	for i in page_holders:
+		page_collection.remove_child(i)
 		i.queue_free()
 	page_holders = []
 	var i = 0
@@ -64,10 +65,6 @@ func _on_NewCopy_pressed():
 func _on_Cancel_pressed():
 	$WindowDialog.hide()
 
-
-func _on_RemoveButton_pressed():
-	pass # Replace with function body.
-
 func _on_Rearrange_command_successful(response):
 	Utility.show_dir(response.get("output_file").get_base_dir())
 
@@ -88,3 +85,11 @@ func _on_SaveFileDialog_file_selected(path):
 		"pages": page_sequence,
 		"output_file": path
 	})
+
+
+func _on_RemoveButton_on_delete(idx):
+	page_collection.remove_child(page_collection.get_child(idx))
+	if page_collection.get_child_count() == 0:
+		drop_files_info.show()
+		save_button.disabled = true
+		

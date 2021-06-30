@@ -12,3 +12,9 @@
 
 #distribution folder
 /dist
+
+#stdout/err replacements for pythonw process
+err.txt
+log.txt
+stderr.txt
+stdout.txt

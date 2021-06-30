@@ -10,7 +10,6 @@ func show_error(error_code: int, message):
 	self.error_code = error_code
 	self.message = message
 	self.label.text = TranslationServer.translate("error_occured_exception") + " (Code: " + str(self.error_code) + ")"
-	print(message)
 	if message == null:
 		match error_code:
 			-1:

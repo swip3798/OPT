@@ -28,8 +28,8 @@ func _on_FileChooser_valid_file_selected(path):
 	drop_files_info.hide()
 	
 func _on_RenderThumbs_command_successful(response):
-	#print(response)
 	for i in page_holders:
+		page_collection.remove_child(i)
 		i.queue_free()
 	page_holders = []
 	var i = 0

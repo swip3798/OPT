@@ -47,3 +47,8 @@ error_embed_exception,Error,Fehler
 detailed_information,Detailed information,Erweiterte Informationen
 drop_files_here_caps,DROP FILES HERE,HIER DATEIEN HINZIEHEN
 rearrange_description,Choose a PDF file and rearrange or delete pages.,Wähle ein PDF Dokument und verändere die Reihenfolge von Seiten oder lösche sie.
+img2pdf_tab,Images to PDF,Bilder zu PDF
+add_img,Add image(s),Bilder hinzufügen
+clear_imgs,Remove all images,Alle Bilder entfernen
+img2pdf_description,Add images and convert them to a pdf file.,Füge Bilder hinzu und erstelle daraus ein PDF Dokument
+img2pdf_convert_button,Create PDF document,PDF Dokument erstellen
