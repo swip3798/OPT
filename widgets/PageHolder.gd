@@ -1,6 +1,6 @@
 extends Control
 
-const TARGET_HEIGHT: int = 200
+const TARGET_HEIGHT: int = 140
 
 export var page_number: int = 0
 var cut_point: bool = false
@@ -18,11 +18,17 @@ func _ready():
 	if dragger_texture != null:
 		tex_rect.texture = dragger_texture
 
+func _resize_img(img: Image) -> Image:
+	var scaling_factor: float = float(TARGET_HEIGHT) / float(img.get_height())
+	img.resize(int(img.get_width()*scaling_factor), TARGET_HEIGHT)
+	return img
+
 func load_texture(b64data: String):
 	var buffer := Marshalls.base64_to_raw(b64data)
 	var texture = ImageTexture.new()
 	var image = Image.new()
 	image.load_png_from_buffer(buffer)
+	image = _resize_img(image)
 	texture.create_from_image(image, 0)
 	tex_rect.texture = texture
 	label.text = tr("page") + " " + str(page_number + 1)
@@ -32,8 +38,7 @@ func load_texture_from_img(path: String):
 	var image = Image.new()
 	var texture = ImageTexture.new()
 	image.load(path)
-	var scaling_factor: float = float(TARGET_HEIGHT) / float(image.get_height())
-	image.resize(int(image.get_width()*scaling_factor), TARGET_HEIGHT)
+	image = _resize_img(image)
 	texture.create_from_image(image, 0)
 	tex_rect.texture = texture
 	label.text = tr("page") + " " + str(page_number + 1)

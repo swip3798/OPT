@@ -11,16 +11,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="LineEdit" parent="."]
 margin_right = 961.0
-margin_bottom = 24.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 
 [node name="Browse" type="Button" parent="."]
 margin_left = 965.0
 margin_right = 1024.0
-margin_bottom = 24.0
+margin_bottom = 28.0
 custom_fonts/font = ExtResource( 2 )
 text = "browse"
 

@@ -14,8 +14,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="OPT"
+config/name="Open PDF Tools"
+config/description="Open PDF Tools using Godot and PyMuPDF!"
 run/main_scene="res://screens/MainScreen.tscn"
+boot_splash/image="res://boot_splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.14902, 0.172549, 0.231373, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -39,4 +43,5 @@ translations=PoolStringArray( "res://translation/translation.de.translation", "r
 
 [rendering]
 
+environment/default_clear_color=Color( 0.0896, 0.10388, 0.14, 1 )
 environment/default_environment="res://default_env.tres"
