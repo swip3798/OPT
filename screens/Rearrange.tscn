@@ -200,3 +200,4 @@ __meta__ = {
 [connection signal="command_failed" from="Rearrange" to="." method="_on_command_failed"]
 [connection signal="command_successful" from="Rearrange" to="." method="_on_Rearrange_command_successful"]
 [connection signal="embedding_error" from="Rearrange" to="." method="_on_embedding_error"]
+[connection signal="on_delete" from="RemoveButton" to="." method="_on_RemoveButton_on_delete"]

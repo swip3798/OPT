@@ -2,11 +2,10 @@ extends Button
 
 onready var page_collection: GridContainer
 
-func _ready():
-	page_collection = get_node("../VBoxContainer/Control/ScrollContainer/PageCollection")
+signal on_delete(idx)
 
 func drop_data(_pos, data):
-	page_collection.remove_child(page_collection.get_child(data))
+	emit_signal("on_delete", data)
 
 
 func can_drop_data(_pos, data):

@@ -16,7 +16,7 @@ func reset_first():
 func get_drag_data(_pos):
 	var drag: HBoxContainer = dragger_scene.instance()
 	drag.rect_scale = Vector2(0.5, 0.5)
-	drag.tex_rect = tex_rect
+	drag.dragger_texture = tex_rect.texture
 	set_drag_preview(drag)
 	get_parent().set_drag_on(true)
 	return get_index()
@@ -36,14 +36,11 @@ func _on_PageDragger_gui_input(event):
 			else:
 				state = STATE_RIGHT
 		else:
-			left_dragger.disabled = true
+			if left_dragger != null:
+				left_dragger.disabled = true
 			separator.disabled = true
 
 func drop_data(_pos, data):
-	print("data:", data)
-	print("page_number:", get_index())
-	print("Right:", state == STATE_RIGHT)
-	print("Left:", state == STATE_LEFT)
 	var dropped = get_parent().get_child(data)
 	var next_idx = get_index()
 	if state == STATE_LEFT:
