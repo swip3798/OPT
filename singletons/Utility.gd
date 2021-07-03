@@ -23,4 +23,8 @@ func cut_document(cut_point_inc: int, page_count: int, output_prefix: String):
 	return [[page_sequence1, output_prefix + "-1.pdf"], [page_sequence2, output_prefix + "-2.pdf"]]
 
 func translate_res_path_absolute(path):
-	return ProjectSettings.globalize_path(path).replace("/", "\\")
+	if OS.has_feature("editor"):
+		return ProjectSettings.globalize_path("res://" + path).replace("/", "\\")
+	else:
+		return (OS.get_executable_path().get_base_dir() + "/" + path).replace("/", "\\")
+	
