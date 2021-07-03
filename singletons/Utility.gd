@@ -21,3 +21,6 @@ func cut_document(cut_point_inc: int, page_count: int, output_prefix: String):
 	for i in range(cut_point_inc + 1, page_count):
 		page_sequence2.append(i)
 	return [[page_sequence1, output_prefix + "-1.pdf"], [page_sequence2, output_prefix + "-2.pdf"]]
+
+func translate_res_path_absolute(path):
+	return ProjectSettings.globalize_path(path).replace("/", "\\")

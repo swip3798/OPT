@@ -1,6 +1,6 @@
 extends Control
 
-const TARGET_HEIGHT: int = 140
+const TARGET_HEIGHT: int = 180
 
 export var page_number: int = 0
 var cut_point: bool = false
