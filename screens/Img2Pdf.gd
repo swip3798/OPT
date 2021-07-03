@@ -7,11 +7,9 @@ var page_holders: Array = []
 
 onready var dialog: FileDialog = $SaveFileDialog
 onready var open_dialog: FileDialog = $OpenFileDialog
-onready var ee_render_thumbs := $RenderThumbs
 onready var ee_img2pdf := $Img2Pdf
 onready var page_collection := $VBoxContainer/Control/ScrollContainer/PageCollection
 onready var save_button := $VBoxContainer/Button
-onready var choice_dialog := $WindowDialog
 onready var except_err := $ExceptionError
 onready var drop_files_info := $DropFilesInfo
 
